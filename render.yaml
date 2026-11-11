@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: chezacrash-practice
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: DATABASE_PATH
+        value: /tmp/chezacrash-demo.db
+      - key: DEMO_ACCOUNTS_ENABLED
+        value: "false"
